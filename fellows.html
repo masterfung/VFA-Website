@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel="stylesheet" href="css/all_1371496029230.css"><script type="text/javascript" src="js/vendor/svg.js"></script>
 <script type="text/javascript" src="js/all_1371496029230.js"></script>
 <script type="text/javascript" src="js/pages/map_spec.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <!--[if lt IE 9]> <script type="text/javascript" src="http://www.mojotech.com/js/vendor/jquery.backgroundSize.js"></script> <script> $(function(){ $('.cover').css({'backgroundSize': "cover"});$('.contain').css({'backgroundSize': "contain"});});</script><![endif]-->
 <!--[if lt IE 9]> <style type="text/css"> #how_we_work{display:none;} .main_copy{top: 20px;} .graphic_elements{top: 50px;} .laptops { position: relative; top: 95px;}</style> <![endif]-->
 <title>Venture for America</title>
@@ -170,6 +171,41 @@
 								<img src="img/2012Fellows/Chelsea-Koglmeier.jpg">
 								
 							</div>
+							
+<p><script type="text/javascript" src="../js/jquery.isotope.min.js"></script><br />
+<script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function(){
+    jQuery('.bio-wall').isotope({
+      itemSelector : '.entry',
+      layoutMode : 'fitRows',  
+      animationEngine: 'jQuery'   
+    });
+    jQuery(".entry a.more").click(function(){
+      var t = jQuery(this);
+      var wrapper = t.closest(".entry");
+      var vital = wrapper.find(".bio");
+      if (t.hasClass("back")){
+        wrapper.removeClass("expanded");
+        t.removeClass("back");
+        t.text("Read More");
+        jQuery(".bio-wall").isotope( 'reLayout' );
+        return false;
+      }
+      //Otherwise, there could be another window open.  
+      jQuery(".entry.expanded").removeClass("expanded");
+      var anotherOpen = jQuery(".entry a.back");
+      if (anotherOpen.length > 0){
+        anotherOpen.removeClass("back");
+        anotherOpen.text("Read More");
+      }
+      wrapper.addClass("expanded");
+      t.addClass("back");
+      t.text("Back");
+      jQuery(".bio-wall").isotope( 'reLayout' );
+      return false;
+    });
+  });
+// ]]&gt;</script></p>
 
 						
 		</div>
